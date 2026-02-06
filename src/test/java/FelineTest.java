@@ -2,7 +2,6 @@
 
 import com.example.Feline;
 import org.junit.Test;
-import org.mockito.Mockito;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -23,7 +22,7 @@ public class FelineTest  {
         assertEquals (1, feline.getKittens());
     }
     @Test
-    public void getFoodTest () throws Exception {
+    public void getEatMeat () throws Exception {
         Feline feline = new Feline();
         List<String> expectedFood  = List.of("Животные", "Птицы", "Рыба");
         List<String> actualFood= feline.eatMeat();

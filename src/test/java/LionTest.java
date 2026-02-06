@@ -17,9 +17,10 @@ public class LionTest {
 
     private Feline feline;
 
+
 @Test
 public void getKittensTest () throws Exception  {
-    Lion lion = new Lion(feline);
+    Lion lion = new Lion("Самка", feline);
     Mockito.when(feline.getKittens()).thenReturn(1);
     int actualKittens = lion.getKittens();
     assertEquals (1, actualKittens);
@@ -27,11 +28,19 @@ public void getKittensTest () throws Exception  {
 
 @Test
     public void getFoodTest ()  throws Exception {
-    Lion lion = new Lion(feline);
+    Lion lion = new Lion("Самец", feline);
     List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
     Mockito.when(feline.getFood("Хищник")).thenReturn(expectedFood);
     List<String> actualResult = lion.getFood();
     assertEquals("Некорректный результат вызова метода", expectedFood, actualResult);
 }
+
+    @Test
+    public void doesHaveManeTest () throws Exception  {
+        Lion lion = new Lion("Самец",feline);
+        boolean expectedMane = true;
+        boolean actualMane = lion.doesHaveMane();
+        assertEquals(expectedMane, actualMane);
+    }
 }
 
