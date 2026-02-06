@@ -6,7 +6,7 @@ public class Cat {
 
     Predator predator;
 
-    public Cat(Feline feline) {
+    public Cat(Feline feline) { // Feline реализует интерфейс Predator
         this.predator = feline;
     }
 
